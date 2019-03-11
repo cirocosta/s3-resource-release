@@ -1,0 +1,4 @@
+[submodule "src/s3-resource"]
+	path = src/s3-resource
+	url = https://github.com/concourse/s3-resource
+	branch = iam-roles

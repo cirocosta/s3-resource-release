@@ -1,0 +1,8 @@
+---
+name: add-resource
+
+templates: {}
+
+packages: [ s3_iam_resource ]
+
+properties: {}

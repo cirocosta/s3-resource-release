@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e -x
+
+cat <<EOF > ${BOSH_INSTALL_TARGET}/resource_metadata.json
+{
+  "type": "s3-iam",
+  "image": "${BOSH_INSTALL_TARGET}/rootfs",
+  "version": "$(sha1sum rootfs.tgz | cut -d ' ' -f1)"
+}
+EOF
+
+
+mkdir -p ${BOSH_INSTALL_TARGET}/rootfs
+tar zxf rootfs.tgz -C ${BOSH_INSTALL_TARGET}/rootfs
