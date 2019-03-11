@@ -12,4 +12,6 @@ releases/**/*.tgz
 *~
 *#
 #*
+
 release.tgz
+src/rootfs.tgz
