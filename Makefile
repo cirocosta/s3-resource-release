@@ -2,14 +2,15 @@ IMAGE_NAME ?= s3-resource-iam
 CONTAINER_NAME ?= s3-resource-container
 ROOTFS ?= ./src/rootfs.tgz
 RELEASE ?= ./release.tgz
-VERSION ?= 0.0.2
+VERSION ?= 0.0.1
+BOSH_ENV ?= vbox
 
 
 all: upload
 
 
 upload: $(RELEASE)
-	bosh -e vbox upload-release $<
+	bosh -e $(BOSH_ENV) upload-release $<
 
 
 release: $(ROOTFS)
